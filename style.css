@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+.main_container {
+  max-width: 900px;
+  padding-top: 100px;
+}
+header {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.logo {
+  width: 60px;
+  height: 50px;
+  border: 1px solid darkgray;
+  border-radius: 50%;
+  background-color: grey;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.nav_item {
+  min-width: 90px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: grey;
+  border: 1px solid lightgray;
+  color: #000;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+.top_img_container {
+  position: relative;
+  background: url("./images/photo1.jpg") center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+  margin-bottom: 20px;
+}
+.top_img_container > blockquote {
+  display: block;
+  position: absolute;
+  margin: 0;
+  width: 300px;
+  top: 100px;
+  right: 80px;
+}
+.top_img_container > blockquote p {
+  margin-bottom: 5px;
+}
+.top_img_container > blockquote footer {
+  text-align: end;
+}
+
+article {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 40px;
+}
+article .text_col {
+  flex: 1;
+  margin-right: 30px;
+}
+.text_col h1 {
+  font-size: 36px;
+  text-transform: uppercase;
+}
+.text_col span {
+  font-weight: 600;
+}
+article .pic_col {
+  width: 45%;
+}
+article .pic_col img {
+  width: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+footer > .social_logo {
+  margin-right: 50px;
+  border: 1px solid red;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
