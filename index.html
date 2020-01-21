@@ -3,11 +3,14 @@
 
 <head>
   <title>Test Mockup</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
   <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
   <div class="main_container">
+
+    <!-- HEADER -->
     <header>
       <div class="logo">
         <span class="inside_text">Sanjay<br>Singhal</span>
@@ -18,17 +21,35 @@
         <a class="nav_item" href="#">Ventures</a>
         <a class="nav_item" href="#">Interviews</a>
       </nav>
+      <div class="mob_menu_btn" onclick="toggleMenu(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+      <div class="mob_menu">
+        <nav>
+          <a class="mob_nav_item" href="#">About</a>
+          <a class="mob_nav_item" href="#">Book</a>
+          <a class="mob_nav_item" href="#">Ventures</a>
+          <a class="mob_nav_item" href="#">Interviews</a>
+        </nav>
+      </div>
     </header>
+
+    <!-- MAIN -->
     <main>
       <div class="top_img_container">
-        <blockquote>
-          <p>Success in life or in business is about surrounding yourself with the right people.</p>
-          <footer>-Sanjay Singhal</footer>
-        </blockquote>
+        <div class="quote_block">
+          <blockquote>
+            <p>Success in life or in business is about surrounding yourself with the right people.</p>
+            <footer>-Sanjay Singhal</footer>
+          </blockquote>
+        </div>
       </div>
       <article>
         <div class="text_col">
-          <h1>Who am I?<br>Sanjay Singhal.</h1>
+          <img class="img_mob" src="images/photo2.jpg" alt="Sanjay Singhal" />
+          <h2><span>Who am I?</span><br><span>Sanjay Singhal.</span></h2>
           <p>Sanjay, a proud Canadian, Tech Entrepreneur and author, is best known for founding and selling the renowned
             Audiobooks.com.</p>
           <p>He is President of the Aquanta group, a Partner for 500 Startups Canada, as well as an AngelOne investor.
@@ -53,16 +74,26 @@
             applied to all areas of the hospitality industry.</p>
         </div>
         <div class="pic_col">
-          <img src="images/photo2.jpg" alt="Sanjay Singhal" />
+          <img class="img_desktop" src="images/photo2.jpg" alt="Sanjay Singhal" />
         </div>
       </article>
     </main>
+
+    <!-- FOOTER -->
     <footer>
-      <div class="social_logo">FB</div>
-      <div class="social_logo">In</div>
-      <div class="social_logo">Tw</div>
+      <a class="social_logo" href="https://www.facebook.com/" target="_blank">
+        <img src="./images/logo-fb.png" alt="Facebook"/>
+      </a>
+      <a class="social_logo" href="https://www.linkedin.com/" target="_blank">
+        <img src="./images/logo-linkedin.png" alt="LinkedIn"/>
+      </a>
+      <a class="social_logo" href="https://www.twitter.com/" target="_blank">
+        <img src="./images/logo-twitter.png" alt="Twitter"/>
+      </a>
     </footer>
   </div>
+
+  <script src="main.js"></script>
 </body>
 
 </html>

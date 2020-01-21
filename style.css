@@ -3,24 +3,39 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center;
+  min-width: 320px;
 }
 .main_container {
   max-width: 900px;
-  padding-top: 100px;
+  padding: 90px 0 400px;
 }
+@media screen and (max-width: 750px) {
+  .main_container {
+    padding: 50px 0;
+  }
+}
+
+
+/* HEADER */
+
 header {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+}
+@media screen and (max-width: 940px) {
+  header {
+    padding: 0 20px;
+  }
 }
 .logo {
-  width: 60px;
-  height: 50px;
-  border: 1px solid darkgray;
+  width: 80px;
+  height: 70px;
+  border: 1px solid grey;
   border-radius: 50%;
-  background-color: grey;
+  background-color: lightgrey;
   color: #000;
   display: flex;
   justify-content: center;
@@ -30,73 +45,254 @@ nav {
   display: flex;
   flex-wrap: nowrap;
 }
+.mob_menu_btn,
+.mob_menu {
+  display: none;
+}
+@media screen and (max-width: 560px) {
+  body.no_scroll {
+    overflow: hidden;
+  }
+  nav {
+    display: none;
+  }
+  .mob_menu_btn {
+    display: inline-block;
+    cursor: pointer;
+  }
+  .mob_menu_btn > .bar1,
+  .mob_menu_btn > .bar2,
+  .mob_menu_btn > .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: darkgray;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  .mob_menu_btn.show {
+    z-index: 2;
+  }
+  .mob_menu_btn.show > div {
+    background-color: #fff;
+  }
+  .mob_menu_btn.show .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  .mob_menu_btn.show .bar2 {
+    opacity: 0;
+  }
+  .mob_menu_btn.show .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+  .mob_menu.show {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8));
+    z-index: 1;
+  }
+  .mob_menu > nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .mob_nav_item {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+  }
+  .mob_nav_item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
 .nav_item {
-  min-width: 90px;
-  height: 40px;
+  min-width: 80px;
+  height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: grey;
-  border: 1px solid lightgray;
+  background: lightgrey;
+  border: 1px solid gray;
   color: #000;
   text-decoration: none;
-  padding: 0 10px;
+  padding: 0 8px;
 }
+.nav_item:not(:last-child) {
+  margin-right: 10px;
+}
+.dropdown > nav {
+  flex-direction: column;
+}
+
+
+/* TOP IMAGE */
 
 .top_img_container {
   position: relative;
-  background: url("./images/photo1.jpg") center no-repeat;
+  background: url("./images/photo1.jpg") top left no-repeat;
   background-size: cover;
   width: 100%;
-  height: 500px;
-  margin-bottom: 20px;
+  height: 600px;
+  margin-bottom: 15px;
 }
-.top_img_container > blockquote {
+@media screen and (max-width: 750px) {
+  .top_img_container {
+    background-position: top center;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .top_img_container {
+    background-position: top center;
+    height: 300px;
+  }
+}
+.top_img_container .quote_block {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+@media screen and (max-width: 750px) {
+  .top_img_container .quote_block {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
+  }
+  .top_img_container blockquote {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+.top_img_container blockquote {
   display: block;
   position: absolute;
   margin: 0;
-  width: 300px;
-  top: 100px;
-  right: 80px;
+  width: 280px;
+  top: 150px;
+  right: 140px;
+  font-size: 15px;
+  line-height: 1.4;
 }
-.top_img_container > blockquote p {
-  margin-bottom: 5px;
+@media screen and (min-width: 751px) and (max-width: 900px) {
+  .top_img_container blockquote {
+    right: 40px;
+  }
 }
-.top_img_container > blockquote footer {
-  text-align: end;
+@media screen and (max-width: 750px) {
+  .top_img_container blockquote {
+    top: initial;
+    right: 20px;
+    bottom: 20px;
+  }
 }
+.top_img_container blockquote p {
+  margin-bottom: 0;
+}
+.top_img_container blockquote > footer {
+  text-align: right;
+}
+
+
+/* ARTICLE */
 
 article {
   display: flex;
   flex-wrap: nowrap;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
+}
+@media screen and (min-width: 751px) and (max-width: 940px) {
+  article {
+    margin: 0 20px 30px;
+  }
+}
+@media screen and (max-width: 750px) {
+  article {
+    margin-bottom: 30px;
+  }
 }
 article .text_col {
   flex: 1;
   margin-right: 30px;
 }
-.text_col h1 {
+@media screen and (max-width: 750px) {
+  article .text_col {
+    margin: 0 20px;
+  }
+}
+article .text_col .img_mob {
+  display: none;
+}
+@media screen and (min-width: 550px) and (max-width: 750px) {
+  article .text_col .img_mob {
+    display: block;
+    width: 40%;
+    float: right;
+    margin: 0 0 20px 20px;
+  }
+}
+.text_col h2 {
   font-size: 36px;
   text-transform: uppercase;
+  line-height: 1.5;
+  margin: 0;
+}
+.text_col h2 span:nth-of-type(2) {
+  font-size: 32px;
+}
+@media screen and (max-width: 750px) {
+  .text_col h2 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+  .text_col h2 span:nth-of-type(2) {
+    font-size: 20px;
+  }
+}
+.text_col p {
+  font-size: 15px;
 }
 .text_col span {
   font-weight: 600;
 }
 article .pic_col {
-  width: 45%;
+  width: 43%;
+}
+@media only screen and (max-width: 750px) {
+  .pic_col {
+    display: none;
+  }
 }
 article .pic_col img {
   width: 100%;
 }
 
-footer {
+
+/* FOOTER */
+
+.main_container > footer {
   display: flex;
   justify-content: center;
 }
-footer > .social_logo {
-  margin-right: 50px;
-  border: 1px solid red;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+.main_container > footer > .social_logo:not(:last-child) {
+  margin-right: 80px;
+}
+@media only screen and (max-width: 750px) {
+  .main_container > footer > .social_logo:not(:last-child) {
+    margin-right: 60px;
+  }
+}
+.social_logo img {
+  width: 60px;
+  height: 60px;
+}
+@media only screen and (max-width: 750px) {
+  .social_logo img {
+    width: 40px;
+    height: 40px;
+  }
 }
